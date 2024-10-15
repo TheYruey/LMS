@@ -22,9 +22,11 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './index.css'
 import './menu.css'
+import Maintenance from './Maintenance.jsx';
+import TableComponent from './TableComponent.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ModalComponent />
+    <TableComponent />
   </StrictMode>,
 )
