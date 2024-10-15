@@ -1,0 +1,23 @@
+#top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#contenedorPrincipal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between  ;
+}
+
+.sndContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#botones{
+    display: flex;    
+    justify-content: center ;
+}

@@ -1,0 +1,13 @@
+#top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.sndContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
