@@ -15,7 +15,7 @@ import { Container } from '@mui/material';
 
 export default function Menu(){
   return(
-    <Container maxWidth="xs" sx={{ position: "absolute", backgroundColor: "#1E2A5E", color: "white", height: "100vh" , width: 300, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+    <Container maxWidth="xs" sx={{ position: "fixed", backgroundColor: "#1E2A5E", color: "white", height: "100vh" , width: 300, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
       <MenuList id="navBar">
         <div id='img'>
             <img src="img\LIMS LOGO.png" alt="logo" />

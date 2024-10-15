@@ -5,7 +5,7 @@ import { Button, Container, FormControl, TextField } from '@mui/material';
 3
 export default function InfoMuestra(){
     return (
-        <Container sx={{marginTop: "4%"}}>
+        <Container sx={{marginTop: "4%", marginRight: 4}}>
             <div id="top">
                 <Button variant="contained" sx={{ height: 50, borderRadius: 15, marginRight: 2, backgroundColor: "#12C2E9"}}>
                 <ArrowBackIcon />

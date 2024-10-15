@@ -1,13 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 //import App from './App.jsx'
-//import Menu from './menu.jsx'
+import Menu from './menu.jsx'
 import ModalComponent from './modal.jsx';
-//import InfoMuestra from './infoMuestra.jsx';
+import InfoMuestra from './infoMuestra.jsx';
 //import ModalEnmendar from './modalEnmendar';
 //import ModalAuditar from './modalAuditar';
 //import ModalAsignarAnalista from './modalAsignarAnalista';
-//import HojaTrabajoAnalista from './hojaTrabajoAnalista';
+import HojaTrabajoAnalista from './hojaTrabajoAnalista';
 //import ModalDatosUsuario from './modalDatosUsuario';
 //import ModalEditarAnalisis from './modalEditarAnalisis';
 //import FormEntidadesExternas from './formEntidadesExternas';
@@ -22,11 +22,12 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './index.css'
 import './menu.css'
-import Maintenance from './Maintenance.jsx';
-import TableComponent from './TableComponent.jsx';
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('hojaTrabajo')).render(
   <StrictMode>
-    <TableComponent />
+    <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+      <Menu />
+      <HojaTrabajoAnalista />
+    </div>
   </StrictMode>,
 )
