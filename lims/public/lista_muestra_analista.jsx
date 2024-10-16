@@ -11,7 +11,9 @@ import TableComponent from '../src/TableComponent';
 
 createRoot(document.getElementById('listaMuestraAnalista')).render(
   <StrictMode>
-    <Menu />
-    <TableComponent />
+    <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+      <Menu />
+      <TableComponent />
+    </div>
   </StrictMode>,
-)
+);
