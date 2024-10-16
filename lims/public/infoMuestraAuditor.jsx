@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Menu from '/src/menu.jsx'
-import InfoMuestra from './infoMuestra.jsx';
+import InfoMuestra from '/src/infoMuestra.jsx';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
