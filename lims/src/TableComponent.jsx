@@ -35,15 +35,15 @@ const initialRows = generateRows(); // Generamos las filas para mostrarlas
 // Definición de las columnas para el DataGrid
 const columns = [
   { field: 'id', headerName: 'No. Contr int', width: 130, editable: false },
-  { field: 'col1', headerName: 'No. Oficio', width: 130, editable: true },
-  { field: 'col2', headerName: 'Fecha Entrada', width: 130, editable: true },
-  { field: 'col3', headerName: 'Fecha Salida', width: 130, editable: true },
+  { field: 'col1', headerName: 'No. Oficio', width: 100, editable: true },
+  { field: 'col2', headerName: 'Fecha Entrada', width: 120, editable: true },
+  { field: 'col3', headerName: 'Fecha Salida', width: 120, editable: true },
   { field: 'col4', headerName: 'Producto', width: 130, editable: true },
-  { field: 'col5', headerName: 'No. Lote', width: 130, editable: true },
+  { field: 'col5', headerName: 'No. Lote', width: 100, editable: true },
   { field: 'col6', headerName: 'Principios Activos', width: 150, editable: true },
   { field: 'col7', headerName: 'Analista Encargado', width: 150, editable: true },
-  { field: 'col8', headerName: 'Recepción', width: 130, editable: true },
-  { field: 'col9', headerName: 'Enmienda', width: 130, editable: true },
+  { field: 'col8', headerName: 'Recepción', width: 120, editable: true },
+  { field: 'col9', headerName: 'Enmienda', width: 120, editable: true },
 ];
 
 const TableComponent = () => {

@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import Menu from '/src//menu.jsx'
 import ModalEnmendar from '/src//modalEnmendar';
 import ModalAuditar from '/src//modalAuditar';
+import TableComponent from '/src//TableComponent';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -22,6 +23,7 @@ createRoot(document.getElementById('muestras_para_auditar')).render(
             <ModalEnmendar />
             <ModalAuditar />
         </div>
+        <TableComponent />
       </div>
     </div>
   </StrictMode>,
