@@ -23,7 +23,7 @@ const generateRows = () => {
       col6: `Principios Activos ${i}`, // Principios activos
       col7: `Analista ${i}`, // Analista encargado
       col8: `Recepción ${i}`, // Recepción
-      col9: `Enmienda ${i}`, // Enmienda
+      
     });
   }
   return data; // Retornamos el array de datos
@@ -43,7 +43,7 @@ const columns = [
   { field: 'col6', headerName: 'Principios Activos', width: 150, editable: true },
   { field: 'col7', headerName: 'Analista Encargado', width: 150, editable: true },
   { field: 'col8', headerName: 'Recepción', width: 120, editable: true },
-  { field: 'col9', headerName: 'Enmienda', width: 120, editable: true },
+  
 ];
 
 const TableComponent = () => {
@@ -105,7 +105,7 @@ const TableComponent = () => {
           <MenuItem value="col6">Principios Activos</MenuItem>
           <MenuItem value="col7">Analista Encargado</MenuItem>
           <MenuItem value="col8">Recepción</MenuItem>
-          <MenuItem value="col9">Enmienda</MenuItem>
+          
         </Select>
 
         {/* Input de búsqueda */}
