@@ -15,11 +15,13 @@ createRoot(document.getElementById('historial_muestras_analista')).render(
   <StrictMode>
   <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
   <MenuAnalista />
-    <div style={{width: "100%", marginLeft: "20%", marginTop: "4%"}}>
-      <Typography Typography id="transition-modal-title" variant="h5">
+    <div style={{width: "100%", marginLeft: "20%", marginTop: "5%"}}>
+      <Typography Typography id="transition-modal-title" variant="h5" style={{marginLeft: "2%", marginBottom: "5%"}}>
           Historial de muestras realizadas
       </Typography>
-      <ModalEnmiendas/>
+      <div style={{marginLeft: "80%"}}>
+        <ModalEnmiendas />
+      </div>
       <TableComponent />
     </div>
   </div>
