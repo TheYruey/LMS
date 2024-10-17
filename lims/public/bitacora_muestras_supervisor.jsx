@@ -9,6 +9,7 @@ import '/src/menu.css'
 import TableComponent from '../src/TableComponent';
 import ModalAsignarAnalista from '/src//ModalAsignarAnalista';
 import {  Typography } from '@mui/material';
+
 createRoot(document.getElementById('bitacoraMuestrasSupervisor')).render(
   <StrictMode>
   <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>

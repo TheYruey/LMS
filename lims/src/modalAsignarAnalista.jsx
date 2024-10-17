@@ -45,7 +45,7 @@ export default function ModalAsignarAnalista() {
 
     return (
         <div>
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <div style={{marginRight: "2%", display: 'flex', justifyContent: 'flex-end' }}>
                 <Button 
                     onClick={handleOpen} 
                     variant='contained' 

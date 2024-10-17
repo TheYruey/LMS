@@ -121,7 +121,7 @@ const TableComponent = () => {
             ),
           }}
         />
-        <Button variant="contained" color="primary" onClick={() => requestSearch(searchText)}>
+        <Button variant="contained" onClick={() => requestSearch(searchText)} sx={{backgroundColor: "#12C2E9"}}>
           Buscar
         </Button>
         <Button onClick={clearFilters} style={{ color: '#2196f3', textTransform: 'none', marginLeft: '10px' }}>
