@@ -1,38 +1,33 @@
 import React, { useState } from 'react';
-import { DataGrid, GridToolbar } from '@mui/x-data-grid'; // Importamos DataGrid y su toolbar
-import { TextField, Button, MenuItem, Select, InputAdornment } from '@mui/material'; // Importamos componentes de MUI
-import SearchIcon from '@mui/icons-material/Search'; // Ícono de búsqueda
-import ClearIcon from '@mui/icons-material/Clear'; // Ícono para limpiar filtros
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import { TextField, Button, MenuItem, Select, InputAdornment } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import ClearIcon from '@mui/icons-material/Clear';
+import ModalAsignarAnalista from './ModalAsignarAnalista'; // Importa tu componente modal
 
 // Función para generar 50 filas de datos ficticios
 const generateRows = () => {
   const data = [];
   for (let i = 1; i <= 50; i++) {
-    // Fecha de entrada y salida (enero y febrero)
     const fechaEntrada = new Date(2023, 0, i).toLocaleDateString();
     const fechaSalida = new Date(2023, 1, i).toLocaleDateString();
-
-    // Pusheamos cada fila con valores únicos
     data.push({
       id: i,
-      col1: i, // Número de oficio
-      col2: fechaEntrada, // Fecha de entrada
-      col3: fechaSalida, // Fecha de salida
-      col4: `Producto ${i}`, // Producto
-      col5: i * 100, // Número de lote
-      col6: `Principios Activos ${i}`, // Principios activos
-      col7: `Analista ${i}`, // Analista encargado
-      col8: `Recepción ${i}`, // Recepción
-      
+      col1: i,
+      col2: fechaEntrada,
+      col3: fechaSalida,
+      col4: `Producto ${i}`,
+      col5: i * 100,
+      col6: `Principios Activos ${i}`,
+      col7: `Analista ${i}`,
+      col8: `Recepción ${i}`,
     });
   }
-  return data; // Retornamos el array de datos
+  return data;
 };
 
-// Filas iniciales
-const initialRows = generateRows(); // Generamos las filas para mostrarlas
+const initialRows = generateRows();
 
-// Definición de las columnas para el DataGrid
 const columns = [
   { field: 'id', headerName: 'No. Contr int', width: 130, editable: false },
   { field: 'col1', headerName: 'No. Oficio', width: 100, editable: true },
@@ -43,60 +38,65 @@ const columns = [
   { field: 'col6', headerName: 'Principios Activos', width: 150, editable: true },
   { field: 'col7', headerName: 'Analista Encargado', width: 150, editable: true },
   { field: 'col8', headerName: 'Recepción', width: 120, editable: true },
-  
 ];
 
 const TableComponent = () => {
-  // Estado para manejar filas, búsqueda y filtros
   const [rows, setRows] = useState(initialRows);
-  const [searchText, setSearchText] = useState(''); // Texto de búsqueda
-  const [filteredRows, setFilteredRows] = useState(initialRows); // Filas filtradas
-  const [searchBy, setSearchBy] = useState(''); // Columna seleccionada para buscar
+  const [searchText, setSearchText] = useState('');
+  const [filteredRows, setFilteredRows] = useState(initialRows);
+  const [searchBy, setSearchBy] = useState('');
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedRow, setSelectedRow] = useState(null); // Estado para almacenar la fila seleccionada
 
-  // Función para filtrar las filas según el texto de búsqueda
+  const handleOpenModal = (row) => {
+    setSelectedRow(row); // Guarda la fila seleccionada para usarla en el modal
+    setOpenModal(true); // Abre el modal
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false); // Cierra el modal
+    setSelectedRow(null); // Resetea la fila seleccionada
+  };
+
   const requestSearch = (searchValue) => {
-    setSearchText(searchValue); // Actualizamos el texto de búsqueda
+    setSearchText(searchValue);
     const filtered = rows.filter((row) => {
       const rowValue = searchBy
         ? row[searchBy]
-        : Object.values(row).find(value => typeof value === 'string'); // Buscamos en la columna seleccionada o en la primera coincidencia
+        : Object.values(row).find(value => typeof value === 'string');
       return rowValue && String(rowValue).toLowerCase().includes(searchValue.toLowerCase());
     });
-    setFilteredRows(filtered); // Actualizamos las filas filtradas
+    setFilteredRows(filtered);
   };
 
-  // Función para limpiar los filtros
   const clearFilters = () => {
-    setSearchText(''); // Limpiamos el texto de búsqueda
-    setSearchBy(''); // Reiniciamos la columna seleccionada
-    setFilteredRows(rows); // Restauramos todas las filas
+    setSearchText('');
+    setSearchBy('');
+    setFilteredRows(rows);
   };
 
-  // Función para actualizar una fila después de la edición
   const processRowUpdate = (newRow) => {
-    const updatedRows = rows.map((row) => (row.id === newRow.id ? newRow : row)); // Actualizamos la fila editada
-    setRows(updatedRows); // Guardamos las filas actualizadas
-    setFilteredRows(updatedRows); // Actualizamos también las filtradas
+    const updatedRows = rows.map((row) => (row.id === newRow.id ? newRow : row));
+    setRows(updatedRows);
+    setFilteredRows(updatedRows);
     return newRow;
   };
 
   return (
     <div style={{ padding: '20px' }}>
-      {/* Contenedor para la barra de búsqueda y selección de columna */}
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
         <Select
-          value={searchBy} // Valor de la columna seleccionada
+          value={searchBy}
           onChange={(e) => {
-            setSearchBy(e.target.value); // Cambiamos la columna
-            requestSearch(searchText); // Actualizamos la búsqueda
+            setSearchBy(e.target.value);
+            requestSearch(searchText);
           }}
           displayEmpty
           style={{ marginRight: '10px', width: '150px' }}
         >
           <MenuItem value="">
-            <em>Buscar por</em> {/* Placeholder por defecto */}
+            <em>Buscar por</em>
           </MenuItem>
-          {/* Opciones de columnas para buscar */}
           <MenuItem value="col1">No. Oficio</MenuItem>
           <MenuItem value="col2">Fecha Entrada</MenuItem>
           <MenuItem value="col3">Fecha Salida</MenuItem>
@@ -105,49 +105,58 @@ const TableComponent = () => {
           <MenuItem value="col6">Principios Activos</MenuItem>
           <MenuItem value="col7">Analista Encargado</MenuItem>
           <MenuItem value="col8">Recepción</MenuItem>
-          
         </Select>
 
-        {/* Input de búsqueda */}
         <TextField
           variant="outlined"
           value={searchText}
-          onChange={(e) => requestSearch(e.target.value)} // Actualizamos búsqueda en cada cambio
+          onChange={(e) => requestSearch(e.target.value)}
           placeholder="Buscar..."
           style={{ marginRight: '10px', width: '30%' }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon /> {/* Ícono de búsqueda */}
+                <SearchIcon />
               </InputAdornment>
             ),
           }}
         />
-        {/* Botón de búsqueda */}
         <Button variant="contained" color="primary" onClick={() => requestSearch(searchText)}>
           Buscar
         </Button>
-        {/* Botón para limpiar filtros */}
         <Button onClick={clearFilters} style={{ color: '#2196f3', textTransform: 'none', marginLeft: '10px' }}>
           <ClearIcon /> Limpiar filtros
         </Button>
       </div>
 
-      {/* Componente DataGrid */}
       <div style={{ height: 500, width: '100%' }}>
         <DataGrid
-          rows={filteredRows} // Mostramos las filas filtradas
-          columns={columns} // Columnas definidas
-          pageSize={6} // Tamaño de la página
-          rowsPerPageOptions={[6]} // Opciones de tamaño por página
-          pagination // Habilitamos paginación
-          processRowUpdate={processRowUpdate} // Manejamos la actualización de filas
-          components={{
-            Toolbar: GridToolbar, // Barra de herramientas de MUI
+          rows={filteredRows}
+          columns={columns}
+          pageSize={6}
+          rowsPerPageOptions={[6]}
+          pagination
+          processRowUpdate={processRowUpdate}
+          onCellDoubleClick={(params) => {
+            if (params.field === 'col7') {
+              handleOpenModal(params.row); // Abre el modal cuando se hace doble clic en la celda de "Analista Encargado"
+            }
           }}
-          experimentalFeatures={{ newEditingApi: true }} // Habilitamos la nueva API de edición
+          components={{
+            Toolbar: GridToolbar,
+          }}
+          experimentalFeatures={{ newEditingApi: true }}
         />
       </div>
+
+      {/* Modal para asignar analista */}
+      {openModal && (
+        <ModalAsignarAnalista
+          open={openModal}
+          handleClose={handleCloseModal}
+          selectedRow={selectedRow} // Pasa la fila seleccionada como prop
+        />
+      )}
     </div>
   );
 };
