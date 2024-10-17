@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Container, FormControl, TextField, Typography, Grid } from '@mui/material';
+import { guardarAnalisis } from './services/apiService'; // Importa la función guardarAnalisis
 import './AnalysisForm.css';
 import InfoMuestraSola from './InfoMuestraSola';
 
@@ -35,11 +36,10 @@ export default function AnalysisForm() {
   };
 
   const handleAddClick = () => {
-    // Añadir el análisis actual al historial si hay datos
     if (Object.values(analysisData).some(value => value)) {
       setAnalisisHistorial([...analisisHistorial, analysisData]);
-      setCurrentAnalysisIndex(analisisHistorial.length); // Mover al nuevo análisis
-      setAnalysisData({ // Limpiar formulario automáticamente
+      setCurrentAnalysisIndex(analisisHistorial.length);
+      setAnalysisData({
         analisisActual: '',
         cantidadPrincipio: '',
         fechaAsignacion: '',
@@ -65,10 +65,15 @@ export default function AnalysisForm() {
     }
   };
 
-  const handleSaveClick = () => {
-    // Lógica para guardar los datos
-    console.log('Datos guardados:', { ...analysisData, ...additionalData });
-    // Aquí puedes agregar lógica para enviar los datos a un servidor o guardarlos localmente.
+  const handleSaveClick = async () => {
+    // Combina ambos conjuntos de datos
+    const dataToSave = { ...analysisData, ...additionalData };
+    try {
+      const response = await guardarAnalisis(dataToSave); // Llama a la función para guardar
+      console.log('Datos guardados correctamente:', response);
+    } catch (error) {
+      console.error("Error al guardar los datos:", error);
+    }
   };
 
   return (
@@ -159,7 +164,6 @@ export default function AnalysisForm() {
       </Container>
 
       <Container maxWidth="md" sx={{ display: "flex", flexDirection: "row", justifyContent: "right", marginBottom: 8 }}>
-        {/* Paginación */}
         <div className="pagination">
           <Button variant="contained" sx={{ margin: 2, backgroundColor: "#12C2E9" }} onClick={handlePrevClick} disabled={currentAnalysisIndex <= 0}>
             &lt;
@@ -176,10 +180,9 @@ export default function AnalysisForm() {
         Resultados
       </Typography>
 
-      {/* Nuevo cuadro de formulario */}
       <Container maxWidth="md" sx={{ border: 2, borderRadius: 3, padding: "5px 0", marginBottom: 5 }}>
         <div id="additionalFields">
-          <Grid container spacing={2}> {/* Espaciado entre los elementos */}
+          <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <FormControl id="datos" sx={{ width: '25ch' }}>
                 <TextField
@@ -230,7 +233,6 @@ export default function AnalysisForm() {
         </div>
       </Container>
 
-      {/* Botón de guardar al final */}
       <Container sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 1, marginBottom: 2, marginRight: 2 }}>
         <Button variant="contained" sx={{ backgroundColor: "#12C2E9" }} onClick={handleSaveClick}>
           Guardar
