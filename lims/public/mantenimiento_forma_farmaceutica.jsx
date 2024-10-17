@@ -10,7 +10,7 @@ import TableComponent from '../src/TableComponent';
 import { Button, TextField, Typography, Box, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-createRoot(document.getElementById('mantenimiento_analisis')).render(
+createRoot(document.getElementById('mantenimiento_forma_farmaceutica')).render(
   <StrictMode>
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       {/* Sidebar */}
@@ -33,29 +33,18 @@ createRoot(document.getElementById('mantenimiento_analisis')).render(
             <ArrowBackIcon />
           </IconButton>
           <Typography id="transition-modal-title" variant="h6" component="h2">
-            Analisis
+            Formas farmaceuticas
           </Typography>
         </Box>
 
         {/* Search and Add Section */}
-        <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}style={{ marginLeft: '16px' }}>
-          <Box display="flex" alignItems="center">
-          <Box display="flex" flexDirection="column" style={{ marginRight: '10px' }}>
-              <TextField label="Forma Farmaceutica" variant="outlined" />
-              <Typography variant="body2" color="primary" style={{ cursor: 'pointer', marginTop: '4px' }}>
-                <a href="#" style={{ textDecoration: 'none', color: 'inherit' }}>xxxxx</a>
-              </Typography>
-            </Box>
-            
-            <Box display="flex" flexDirection="column" style={{ marginRight: '10px' }}>
-              <TextField label="Forma Farmaceutica" variant="outlined" />
-              <Typography variant="body2" color="primary" style={{ cursor: 'pointer', marginTop: '4px' }}>
-                <a href="#" style={{ textDecoration: 'none', color: 'inherit' }}>Agregar</a>
-              </Typography>
-            </Box>
-          </Box>
+        <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+        <Box 
+        display="flex" alignItems="center" style={{ marginLeft: '16px' }} > <TextField label="Forma Farmaceutica" variant="outlined" /> 
+        </Box>
 
-          <Button variant="contained" color="primary" style={{ backgroundColor: '#00aaff', height: '40px', marginRight: '16px'  }}> Añadir analisis </Button>
+          <Button variant="contained" color="primary" style={{ backgroundColor: '#00aaff', height: '40px', marginRight: '16px'  }}> Añadir forma </Button>
+
         </Box>
 
         {/* Table Component */}
