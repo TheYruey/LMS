@@ -3,7 +3,6 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { TextField, Button, MenuItem, Select, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
-import ModalAsignarAnalista from './ModalAsignarAnalista'; // Importa tu componente modal
 
 // Función para generar 50 filas de datos ficticios
 const generateRows = () => {
@@ -45,18 +44,6 @@ const TableComponent = () => {
   const [searchText, setSearchText] = useState('');
   const [filteredRows, setFilteredRows] = useState(initialRows);
   const [searchBy, setSearchBy] = useState('');
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedRow, setSelectedRow] = useState(null); // Estado para almacenar la fila seleccionada
-
-  const handleOpenModal = (row) => {
-    setSelectedRow(row); // Guarda la fila seleccionada para usarla en el modal
-    setOpenModal(true); // Abre el modal
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false); // Cierra el modal
-    setSelectedRow(null); // Resetea la fila seleccionada
-  };
 
   const requestSearch = (searchValue) => {
     setSearchText(searchValue);
@@ -138,8 +125,8 @@ const TableComponent = () => {
           pagination
           processRowUpdate={processRowUpdate}
           onCellDoubleClick={(params) => {
-            if (params.field === 'col7') {
-              handleOpenModal(params.row); // Abre el modal cuando se hace doble clic en la celda de "Analista Encargado"
+            if (params.field === 'id') {
+              window.location.href = 'infoMuestraAnalista.html';
             }
           }}
           components={{
@@ -148,15 +135,6 @@ const TableComponent = () => {
           experimentalFeatures={{ newEditingApi: true }}
         />
       </div>
-
-      {/* Modal para asignar analista */}
-      {openModal && (
-        <ModalAsignarAnalista
-          open={openModal}
-          handleClose={handleCloseModal}
-          selectedRow={selectedRow} // Pasa la fila seleccionada como prop
-        />
-      )}
     </div>
   );
 };
