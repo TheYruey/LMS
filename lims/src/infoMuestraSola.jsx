@@ -33,18 +33,12 @@ export default function InfoMuestraSola(){
                     <TextField  disabled id="standard-disabled" label="Cantidad de muestra" defaultValue="xxxx" variant="standard" />
                   </FormControl>
                   <FormControl id="datos" sx={{ width: '25ch' }}>
-                    <TextField  disabled id="standard-disabled" label="No. muestras etiquetadas" defaultValue="xxxx" variant="standard" />
-                  </FormControl>
-                  <FormControl id="datos" sx={{ width: '25ch' }}>
                     <TextField  disabled id="standard-disabled" label="Documentos" defaultValue="xxxx" variant="standard" />
                   </FormControl>
                 </div>
                 <div id="sContainer">
                   <FormControl id="datos" variant="standard" sx={{ width: '25ch' }}>
                     <TextField  disabled id="standard-disabled" label="Forma famacéutica" defaultValue="xxxx" variant="standard" />
-                  </FormControl>
-                  <FormControl id="datos" variant="standard" sx={{ width: '25ch' }}>
-                    <TextField  disabled id="standard-disabled" label="Fecha de digitación" defaultValue="xxxx" variant="standard" />
                   </FormControl>
                   <FormControl id="datos" variant="standard" sx={{ width: '25ch' }}>
                     <TextField  disabled id="standard-disabled" label="Modo de conservación" defaultValue="xxxx" variant="standard" />
