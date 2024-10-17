@@ -9,7 +9,7 @@ import TableComponent from '../src/TableComponent';
 import ModalEnmiendas from '../src/modalenmiendas';
 import { Typography } from '@mui/material';
 import MenuSupervisor from '../src/menu_supervisor';
-
+import Reporte from './Reporte_bitacora_supervisor'
 createRoot(document.getElementById('bitacoraGeneralSupervisor')).render(
   <StrictMode>
   <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
