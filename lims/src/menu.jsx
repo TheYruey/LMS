@@ -35,12 +35,13 @@ export default function Menu(){
   <ModalComponent />
 </MenuItem>
 
-        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_analista.html">
+        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_digitador.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <ArticleRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
           <ListItemText>Historial de muestras</ListItemText>
         </MenuItem>
+        
         <MenuItem id="itemsMenu" component="a" href="/public/historial_muestra_analista.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <MessageRoundedIcon fontSize="large" sx={{color: "white"}} />
