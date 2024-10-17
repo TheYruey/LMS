@@ -1,17 +1,16 @@
-import './infoMuestra.css';
-import './hojaTrabajoAnalista.css';
+import './infoMuestraA.css';
 import Typography from '@mui/material/Typography';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Button, Container, FormControl, TextField } from '@mui/material';
-export default function HojaTrabajoAnalista(){
+export default function InfoMuestraA(){
     return (
-        <Container sx={{marginTop: "4%", marginRight: 3}}>
+        <Container sx={{marginTop: "4%", marginRight: 4}}>
             <div id="top">
                 <Button variant="contained" sx={{ height: 50, borderRadius: 15, marginRight: 2, backgroundColor: "#12C2E9"}}>
                 <ArrowBackIcon />
                 </Button>
                 <Typography id="transition-modal-title" variant="h6" component="h2">
-                    Hoja de trabajo
+                    Información de la muestra
                 </Typography>
             </div>
             <Container maxWidth="md" sx={{border: 2, borderRadius: 3, padding: "5px 0", marginBottom: 5}}>                
@@ -81,60 +80,72 @@ export default function HojaTrabajoAnalista(){
                 </div>
               </div>
             </Container>
-            <Container maxWidth="md">
-                <Container>
-                    <Typography id="transition-modal-title" variant="h6" component="h2">
-                        Análisis
-                    </Typography>
-                    <div id="analisis">
-                        <div>
-                            <FormControl id="datos" sx={{ width: '25ch' }}>
-                                <TextField label="Análisis actual" variant="standard" />
-                            </FormControl>
-                            <FormControl id="datos" sx={{ width: '25ch' }}>
-                                <TextField label="Principio actual asignado" variant="standard" />
-                            </FormControl>
-                        </div>
-                        <div>
-                            <FormControl id="datos" sx={{ width: '25ch' }}>
-                                <TextField label="Fecha asignación" variant="standard" />
-                            </FormControl>
-                            <FormControl id="datos" sx={{ width: '25ch' }}>
-                                <TextField label="Fuente de metodología análitica" variant="standard" />
-                            </FormControl>
-                        </div>
-                    </div>
-                </Container>
-                <Container>
-                    <Typography id="transition-modal-title" variant="h6" component="h2">
-                        Resultados
-                    </Typography>
-                    <div id="resultados">
-                        <div>
-                            <FormControl id="datos" sx={{ width: '25ch' }}>
-                                <TextField label="Descripción" variant="standard" />
-                            </FormControl>
-                            <FormControl id="datos" sx={{ width: '25ch' }}>
-                                <TextField id="outlined-multiline-static" label="Resultado" multiline
-                    rows={4} />
-                            </FormControl>
-                        </div>
-                        <div>
-                            <FormControl id="datos" sx={{ width: '25ch' }}>
-                                <TextField label="Especificación" variant="standard" />
-                            </FormControl>
-                            <FormControl id="datos" sx={{ width: '25ch' }}>
-                                <TextField id="outlined-multiline-static" label="Observaciones" multiline
-                    rows={4} />
-                            </FormControl>
-                        </div>
-                    </div>
-                </Container>
+                      <Container id="organoleptica" sx={{ marginBottom: 2 }}>
+            <div id="topAnalisis">
+              <Typography id="transition-modal-title" variant="h6" component="h2">
+                Organoleptica:
+              </Typography>
+            </div>
+            <Container maxWidth="md" sx={{border: 2, borderRadius: 3, padding: "5px 0"}}>                
+              <div id="principalContainer">
+                <div id="sContainer">
+                  <FormControl id="datos" sx={{ width: '25ch' }}>
+                    <TextField disabled id="standard-disabled" label="Descripcion" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                  <FormControl id="datos" variant="standard" sx={{ width: '25ch' }}>
+                    <TextField  disabled id="standard-disabled" label="Observaciones" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                </div>
+                <div id="sContainer">
+                  <FormControl id="datos" sx={{ width: '25ch' }}>
+                    <TextField  disabled id="standard-disabled" label="Rango" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                  <FormControl id="datos" variant="standard" sx={{ width: '25ch' }}>
+                    <TextField  disabled id="standard-disabled" label="Resultado" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                </div>
+              </div>
             </Container>
-            <Container maxWidth="md" sx={{display: "flex", flexDirection: "row", justifyContent: "right", marginBottom: 8}}>
-            <Button variant="contained" sx={{margin: 2, backgroundColor: "#12C2E9"}}>Añadir</Button>
-            <Button variant="contained" sx={{margin: 2, marginRight: 0, backgroundColor: "#12C2E9"}}>Guardar</Button>
-            </Container>            
+          </Container>
+
+          <Container id="datosAnalisis" sx={{ marginBottom: 2 }}>
+            <div id="topAnalisis">
+              <Typography id="transition-modal-title" variant="h6" component="h2">
+                Datos del análisis:
+              </Typography>
+            </div>
+            <Container maxWidth="md" sx={{border: 2, borderRadius: 3, padding: "5px 0"}}>                
+              <div id="principalContainer">
+                <div id="sContainer">
+                  <FormControl id="datos" sx={{ width: '25ch' }}>
+                    <TextField disabled id="standard-disabled" label="Análisis actual" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                  <FormControl id="datos" variant="standard" sx={{ width: '25ch' }}>
+                    <TextField  disabled id="standard-disabled" label="Fecha de asignación" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                  <FormControl id="datos" sx={{ width: '25ch' }}>
+                    <TextField disabled id="standard-disabled" label="Especificación" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                </div>
+                <div id="sContainer">
+                  <FormControl id="datos" variant="standard" sx={{ width: '25ch' }}>
+                    <TextField  disabled id="standard-disabled" label="Cantidad principio actual" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                  <FormControl id="datos" variant="standard" sx={{ width: '25ch' }}>
+                    <TextField  disabled id="standard-disabled" label="Fecha de finalizacion" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                </div>
+                <div id="sContainer">
+                  <FormControl id="datos" sx={{ width: '25ch' }}>
+                    <TextField  disabled id="standard-disabled" label="Resultado" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                  <FormControl id="datos" variant="standard" sx={{ width: '25ch' }}>
+                    <TextField  disabled id="standard-disabled" label="Rango" defaultValue="xxxx" variant="standard" />
+                  </FormControl>
+                </div>
+              </div>
+            </Container>
+            </Container>           
         </Container>
       );
     }
