@@ -1,0 +1,31 @@
+#topAnalisis {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+}
+
+#principalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#analysis {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#sContainer {
+    margin: 40px;
+}
+
+#datos {
+    margin-top: 20px;
+}
+
+#datos label {
+    color: black;
+}
