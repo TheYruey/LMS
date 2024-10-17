@@ -42,7 +42,7 @@ export default function Menu(){
           <ListItemText>Historial de muestras</ListItemText>
         </MenuItem>
         
-        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestra_analista.html">
+        <MenuItem id="itemsMenu" component="a" href="/public/bitacora_muestras_supervisor.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <MessageRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
