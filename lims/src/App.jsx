@@ -15,7 +15,7 @@ export default function App(){
           <label htmlFor="password">Contraseña</label>
           <input type="password" name="password" placeholder="**********" />
         </div>
-        <Button variant="outlined" id="login" endIcon={<ArrowForwardIcon />}>Iniciar sesión</Button>
+        <Button variant="outlined" id="login" component="a" href="/public/inicio_digitador.html" endIcon={<ArrowForwardIcon />}>Iniciar sesión</Button>
       </Container>
     </div>
   )
