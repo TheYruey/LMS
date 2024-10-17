@@ -57,7 +57,7 @@ export default function ModalEnmiendas(){
                                 <ArrowBackIcon />
                             </Button>
                             <Typography id="transition-modal-title" variant="h6" component="h2">
-                                Asignar analista
+                                Lista de enmiendas
                             </Typography>
                         </div>
                         

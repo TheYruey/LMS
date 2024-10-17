@@ -11,6 +11,7 @@ import '/src/menu.css'
 
 
 
+
 createRoot(document.getElementById('info_muestra_sin_analisis')).render(
   <StrictMode>
     <div style={{display: "flex", flexDirection: "column", justifyContent: "flex-start"}}>

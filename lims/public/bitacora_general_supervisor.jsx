@@ -7,7 +7,9 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '/src/menu.css'
 import TableComponent from '../src/TableComponent';
-import { Button, Typography } from '@mui/material';
+import ModalEnmiendas from '../src/modalenmiendas';
+import { Typography } from '@mui/material';
+
 createRoot(document.getElementById('bitacoraGeneralSupervisor')).render(
   <StrictMode>
   <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
@@ -17,6 +19,7 @@ createRoot(document.getElementById('bitacoraGeneralSupervisor')).render(
           Muestras
       </Typography>
       <TableComponent />
+      <ModalEnmiendas/>
     </div>
   </div>
 </StrictMode>
