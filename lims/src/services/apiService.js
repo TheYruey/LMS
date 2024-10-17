@@ -2,6 +2,20 @@
 
 const API_BASE_URL = "https://localhost:7299/api";
 
+export const guardarAnalisis = async (analisisData) => {
+    const response = await fetch(`${API_BASE_URL}/TAnalisis`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(analisisData)
+    });
+    if (!response.ok) {
+        throw new Error("Error al guardar el análisis");
+    }
+    return response.json();
+};
+
 // Función general de fetch
 const fetchData = async (endpoint) => {
     const respuesta = await fetch(`${API_BASE_URL}/${endpoint}`);
