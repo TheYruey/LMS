@@ -40,7 +40,7 @@ export default function Menu(){
           </ListItemIcon>
           <ListItemText>Mantenimiento</ListItemText>
         </MenuItem>
-        <MenuItem id="itemsMenu">
+        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_analista.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <ArticleRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
@@ -58,7 +58,7 @@ export default function Menu(){
           </ListItemIcon>
           <ListItemText>Muestras disponibles</ListItemText>
         </MenuItem>
-        <MenuItem id="itemsMenu">
+        <MenuItem id="itemsMenu" component="a" href="/public/bitacora_general_supervisor.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <AppsRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
