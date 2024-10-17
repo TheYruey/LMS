@@ -9,6 +9,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Button, Typography } from '@mui/material';
+import ModalEnmiendas from '../src/modalenmiendas';
 
 createRoot(document.getElementById('muestras_para_auditar')).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('muestras_para_auditar')).render(
             <Button variant='contained' sx={{backgroundColor: "#12C2E9"}}>Refrescar</Button>
             <ModalEnmendar />
             <ModalAuditar />
+            <ModalEnmiendas/>
         </div>
         <TableComponent />
       </div>
