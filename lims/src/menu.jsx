@@ -19,9 +19,9 @@ export default function Menu(){
     <Container maxWidth="xs" sx={{ position: "fixed", backgroundColor: "#1E2A5E", color: "white", height: "100vh" , width: 300, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
       <MenuList id="navBar">
         <div id='img'>
-            <img src="img\LIMS LOGO.png" alt="logo" />
+            <img src="/img/LIMS LOGO.png" alt="logo" />
         </div>
-        <MenuItem id="itemsMenu">
+        <MenuItem id="itemsMenu"  component="a" href="/public/inicio_analista.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <HomeRoundedIcon fontSize= "large" sx={{color: "white"}} />
           </ListItemIcon>
