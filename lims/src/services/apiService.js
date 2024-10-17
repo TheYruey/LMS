@@ -2,6 +2,7 @@
 
 const API_BASE_URL = "https://localhost:7299/api";
 
+//save en analysis form
 export const guardarAnalisis = async (analisisData) => {
     const response = await fetch(`${API_BASE_URL}/TAnalisis`, {
         method: 'POST',
@@ -15,6 +16,14 @@ export const guardarAnalisis = async (analisisData) => {
     }
     return response.json();
 };
+
+//obtener enmiendas
+export const obtenerEnmiendas = async () => {
+    const response = await fetch(`${API_BASE_URL}/TEnmiendas`);
+    if (!response.ok) throw new Error("Error al obtener las enmiendas");
+    return response.json();
+};
+
 
 // Función general de fetch
 const fetchData = async (endpoint) => {
