@@ -26,6 +26,7 @@ createRoot(document.getElementById('Hoja_Trabajo')).render(
     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
       <Menu />
       <AnalysisForm />
+    
     </div>
   </StrictMode>,
 )

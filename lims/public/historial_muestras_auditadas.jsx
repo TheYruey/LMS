@@ -1,13 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Menu from '/src//menu.jsx'
-import ModalComponent from '/src//Modal';
 import TableComponent from '/src//TableComponent';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Button, Typography } from '@mui/material';
+import ModalEnmiendas from '../src/modalenmiendas';
 
 createRoot(document.getElementById('historial_muestras_auditadas')).render(
   <StrictMode>
@@ -21,6 +21,7 @@ createRoot(document.getElementById('historial_muestras_auditadas')).render(
             <Button variant='contained' sx={{backgroundColor: "#12C2E9"}}>Refrescar</Button>
             <Button variant='contained' sx={{backgroundColor: "#12C2E9"}}>Consultar</Button>
         </div>
+        <ModalEnmiendas/>
         <TableComponent />
       </div>
     </div>

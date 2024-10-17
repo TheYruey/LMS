@@ -7,7 +7,10 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '/src/menu.css'
 import TableComponent from '../src/TableComponent';
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import ModalEnmiendas from '../src/modalenmiendas';
+
+
 createRoot(document.getElementById('historial_muestras_analista')).render(
   <StrictMode>
   <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
@@ -16,6 +19,7 @@ createRoot(document.getElementById('historial_muestras_analista')).render(
       <Typography Typography id="transition-modal-title" variant="h5">
           Historial de muestras realizadas
       </Typography>
+      <ModalEnmiendas/>
       <TableComponent />
     </div>
   </div>
