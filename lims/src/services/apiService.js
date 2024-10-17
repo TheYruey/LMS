@@ -31,6 +31,28 @@ export const obtenerMuestraPorId = async (id) => {
     return response.json();
 };
 
+//enmendar muestra
+export const enmendarMuestra = async (id, data) => {
+    const response = await fetch(`${API_BASE_URL}/TMuestras/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) throw new Error("Error al enmendar la muestra");
+    return response.json();
+};
+
+// auditar muestra
+export const auditarMuestra = async (id) => {
+    const response = await fetch(`${API_BASE_URL}/TMuestras/auditar/${id}`, {
+        method: 'POST'
+    });
+    if (!response.ok) throw new Error("Error al auditar la muestra");
+    return response.json();
+};
+
 // Función general de fetch
 const fetchData = async (endpoint) => {
     const respuesta = await fetch(`${API_BASE_URL}/${endpoint}`);
