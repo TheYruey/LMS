@@ -1,6 +1,5 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Menu from '/src/menu.jsx';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -9,12 +8,13 @@ import '/src/menu.css';
 import AnalisisTable from '../src/AnalisisTable';
 import { Button, TextField, Typography, Box, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import MenuAnalista from '../src/menu_analista';
 
 createRoot(document.getElementById('mantenimiento_analisis')).render(
   <StrictMode>
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       {/* Sidebar */}
-      <Menu />
+      <MenuAnalista />
 
       {/* Main Content */}
       <div style={{ width: '100%', marginLeft: '20%', padding: '20px' }}>

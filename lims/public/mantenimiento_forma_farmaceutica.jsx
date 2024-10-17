@@ -1,6 +1,5 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Menu from '/src/menu.jsx';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -9,12 +8,13 @@ import '/src/menu.css';
 import TableComponent from '../src/TableComponent';
 import { Button, TextField, Typography, Box, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import MenuSupervisor from '../src/menu_supervisor';
 
 createRoot(document.getElementById('mantenimiento_forma_farmaceutica')).render(
   <StrictMode>
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       {/* Sidebar */}
-      <Menu />
+      <MenuSupervisor />
 
       {/* Main Content */}
       <div style={{ width: '100%', marginLeft: '20%', padding: '20px' }}>
