@@ -24,6 +24,12 @@ export const obtenerEnmiendas = async () => {
     return response.json();
 };
 
+// obtener muestra por id
+export const obtenerMuestraPorId = async (id) => {
+    const response = await fetch(`${API_BASE_URL}/TMuestras/${id}`);
+    if (!response.ok) throw new Error("Error al obtener la muestra");
+    return response.json();
+};
 
 // Función general de fetch
 const fetchData = async (endpoint) => {
