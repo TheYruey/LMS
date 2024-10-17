@@ -220,7 +220,6 @@ export default function AnalysisForm() {
               <FormControl id="datos" sx={{ width: '25ch' }}>
                 <TextField
                   label="Observaciones"
-                  variant="standard"
                   id="observaciones"
                   value={additionalData.observaciones}
                   onChange={handleAdditionalChange}
@@ -233,7 +232,7 @@ export default function AnalysisForm() {
         </div>
       </Container>
 
-      <Container sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 1, marginBottom: 2, marginRight: 2 }}>
+      <Container sx={{width: "90%",  display: 'flex', justifyContent: 'flex-end', marginTop: 1, marginBottom: 2, marginRight: 30 }}>
         <Button variant="contained" sx={{ backgroundColor: "#12C2E9" }} onClick={handleSaveClick}>
           Guardar
         </Button>

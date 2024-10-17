@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 //import App from './App.jsx'
-import Menu from './menu.jsx'
+import MenuAnalista from '../src/menu_analista.jsx';
 //import ModalEnmendar from './modalEnmendar';
 //import ModalAuditar from './modalAuditar';
 //import ModalAsignarAnalista from './modalAsignarAnalista';
@@ -24,9 +24,8 @@ import AnalysisForm from './AnalysisForm.jsx';
 createRoot(document.getElementById('Hoja_Trabajo')).render(
   <StrictMode>
     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
-      <Menu />
+      <MenuAnalista />
       <AnalysisForm />
-    
     </div>
   </StrictMode>,
 )
