@@ -18,7 +18,7 @@ export default function MenuAuditor(){
         <div id='img'>
             <img src="/img/LIMS LOGO.png" alt="logo" />
         </div>
-        <MenuItem id="itemsMenu"  component="a" href="/public/inicio_analista.html">
+        <MenuItem id="itemsMenu"  component="a" href="/public/inicio_auditor.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <HomeRoundedIcon fontSize= "large" sx={{color: "white"}} />
           </ListItemIcon>
@@ -32,7 +32,7 @@ export default function MenuAuditor(){
           <ListItemText>Muestras disponibles</ListItemText>
         </MenuItem>
 
-        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_analista.html">
+        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_auditadas.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <AppsRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>

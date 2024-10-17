@@ -19,7 +19,7 @@ export default function Menu(){
         <div id='img'>
             <img src="/img/LIMS LOGO.png" alt="logo" />
         </div>
-        <MenuItem id="itemsMenu"  component="a" href="/public/inicio_analista.html">
+        <MenuItem id="itemsMenu"  component="a" href="/public/inicio_digitador.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <HomeRoundedIcon fontSize= "large" sx={{color: "white"}} />
           </ListItemIcon>
