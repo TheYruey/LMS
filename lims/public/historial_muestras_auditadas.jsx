@@ -1,6 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Menu from '/src//menu.jsx'
+<<<<<<< HEAD
+//import ModalComponent from '/src//Modal';
+=======
+>>>>>>> b5cf2a92b6ea38502a9a7f885dbf87ee12706f18
 import TableComponent from '/src//TableComponent';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
