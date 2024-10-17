@@ -24,6 +24,7 @@ createRoot(document.getElementById('muestras_para_auditar')).render(
             <ModalEnmendar />
             <ModalAuditar />
             <ModalEnmiendas/>
+           
         </div>
         <TableComponent />
       </div>

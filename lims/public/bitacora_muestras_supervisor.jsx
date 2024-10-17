@@ -7,7 +7,8 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '/src/menu.css'
 import TableComponent from '../src/TableComponent';
-import { Button, Typography } from '@mui/material';
+import ModalAsignarAnalista from '/src//ModalAsignarAnalista';
+import {  Typography } from '@mui/material';
 createRoot(document.getElementById('bitacoraMuestrasSupervisor')).render(
   <StrictMode>
   <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('bitacoraMuestrasSupervisor')).render(
       <Typography Typography id="transition-modal-title" variant="h5">
           Muestras
       </Typography>
+      <ModalAsignarAnalista/>
       <TableComponent />
     </div>
   </div>
