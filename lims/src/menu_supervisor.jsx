@@ -5,14 +5,13 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import BorderColorRoundedIcon from '@mui/icons-material/BorderColorRounded';
-import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
+import MessageRoundedIcon from '@mui/icons-material/MessageRounded';
+import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import { Container } from '@mui/material';
-import ModalComponent from './modal';
 
 
-export default function Menu(){
+export default function MenuSupervisor(){
   return(
     <Container maxWidth="xs" sx={{ position: "fixed", backgroundColor: "#1E2A5E", color: "white", height: "100vh" , width: 300, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
       <MenuList id="navBar">
@@ -25,20 +24,19 @@ export default function Menu(){
           </ListItemIcon>
           <ListItemText>Inicio</ListItemText>
         </MenuItem>
-
-        <MenuItem id="itemsMenu" sx={{ display: 'flex', alignItems: 'center' }}>
-          <ListItemIcon sx={{ marginRight: 2 }}>
-            <BorderColorRoundedIcon fontSize="large" sx={{ color: "white" }} />
+        
+        <MenuItem id="itemsMenu" component="a" href="/public/bitacora_muestras_supervisor.html">
+          <ListItemIcon sx={{marginRight: 2}}>
+            <MessageRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
-          <ListItemText>Registrar muestra</ListItemText>
-          <ModalComponent />
+          <ListItemText>Muestras en fila</ListItemText>
         </MenuItem>
 
-        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_digitador.html">
+        <MenuItem id="itemsMenu" component="a" href="/public/bitacora_general_supervisor.html">
           <ListItemIcon sx={{marginRight: 2}}>
-            <ArticleRoundedIcon fontSize="large" sx={{color: "white"}} />
+            <AppsRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
-          <ListItemText>Historial de muestras</ListItemText>
+          <ListItemText>Bitacora general</ListItemText>
         </MenuItem>
 
         </MenuList>

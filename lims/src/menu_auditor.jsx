@@ -5,14 +5,13 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import BorderColorRoundedIcon from '@mui/icons-material/BorderColorRounded';
-import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
+import MessageRoundedIcon from '@mui/icons-material/MessageRounded';
+import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import { Container } from '@mui/material';
-import ModalComponent from './modal';
 
 
-export default function Menu(){
+export default function MenuAuditor(){
   return(
     <Container maxWidth="xs" sx={{ position: "fixed", backgroundColor: "#1E2A5E", color: "white", height: "100vh" , width: 300, display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
       <MenuList id="navBar">
@@ -26,21 +25,19 @@ export default function Menu(){
           <ListItemText>Inicio</ListItemText>
         </MenuItem>
 
-        <MenuItem id="itemsMenu" sx={{ display: 'flex', alignItems: 'center' }}>
-          <ListItemIcon sx={{ marginRight: 2 }}>
-            <BorderColorRoundedIcon fontSize="large" sx={{ color: "white" }} />
-          </ListItemIcon>
-          <ListItemText>Registrar muestra</ListItemText>
-          <ModalComponent />
-        </MenuItem>
-
-        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_digitador.html">
+        <MenuItem id="itemsMenu" component="a" href="/public/muestras_para_auditar.html">
           <ListItemIcon sx={{marginRight: 2}}>
-            <ArticleRoundedIcon fontSize="large" sx={{color: "white"}} />
+            <MessageRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
-          <ListItemText>Historial de muestras</ListItemText>
+          <ListItemText>Muestras disponibles</ListItemText>
         </MenuItem>
 
+        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_analista.html">
+          <ListItemIcon sx={{marginRight: 2}}>
+            <AppsRoundedIcon fontSize="large" sx={{color: "white"}} />
+          </ListItemIcon>
+          <ListItemText>Historial general</ListItemText>
+        </MenuItem>
         </MenuList>
         <MenuList>
         <Divider />
