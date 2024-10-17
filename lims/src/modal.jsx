@@ -45,7 +45,7 @@ export default function ModalComponent(){
       >
         <Fade in={open}>
           <Box sx={style}>
-            <div id="top">
+            <div id="top" style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
               <Typography id="transition-modal-title" variant="h6" component="h2">
                 Datos de la muestra
               </Typography>
