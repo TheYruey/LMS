@@ -18,8 +18,8 @@ createRoot(document.getElementById('bitacoraGeneralSupervisor')).render(
       <Typography Typography id="transition-modal-title" variant="h5">
           Muestras
       </Typography>
-      <TableComponent />
       <ModalEnmiendas/>
+      <TableComponent />
     </div>
   </div>
 </StrictMode>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Container, FormControl, TextField, Typography } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Button, Container, FormControl, TextField, Typography, Grid } from '@mui/material';
 import './AnalysisForm.css';
+import InfoMuestraSola from './InfoMuestraSola';
 
 export default function AnalysisForm() {
-  const [formData, setFormData] = useState({
+  // Estado para los campos de análisis
+  const [analysisData, setAnalysisData] = useState({
     analisisActual: '',
     cantidadPrincipio: '',
     fechaAsignacion: '',
@@ -14,19 +15,31 @@ export default function AnalysisForm() {
     especificacion: ''
   });
 
+  // Estado para los campos adicionales
+  const [additionalData, setAdditionalData] = useState({
+    descripcion: '',
+    observaciones: '',
+    especificacionR: '',
+    resultadoR: ''
+  });
+
   const [analisisHistorial, setAnalisisHistorial] = useState([]);
   const [currentAnalysisIndex, setCurrentAnalysisIndex] = useState(-1); // Inicia sin análisis
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+  const handleAnalysisChange = (e) => {
+    setAnalysisData({ ...analysisData, [e.target.id]: e.target.value });
+  };
+
+  const handleAdditionalChange = (e) => {
+    setAdditionalData({ ...additionalData, [e.target.id]: e.target.value });
   };
 
   const handleAddClick = () => {
     // Añadir el análisis actual al historial si hay datos
-    if (formData.analisisActual || formData.cantidadPrincipio || formData.fechaAsignacion || formData.fechaFin || formData.rango || formData.resultado || formData.especificacion) {
-      setAnalisisHistorial([...analisisHistorial, formData]);
+    if (Object.values(analysisData).some(value => value)) {
+      setAnalisisHistorial([...analisisHistorial, analysisData]);
       setCurrentAnalysisIndex(analisisHistorial.length); // Mover al nuevo análisis
-      setFormData({ // Limpiar formulario automáticamente
+      setAnalysisData({ // Limpiar formulario automáticamente
         analisisActual: '',
         cantidadPrincipio: '',
         fechaAsignacion: '',
@@ -41,19 +54,27 @@ export default function AnalysisForm() {
   const handlePrevClick = () => {
     if (currentAnalysisIndex > 0) {
       setCurrentAnalysisIndex(currentAnalysisIndex - 1);
-      setFormData(analisisHistorial[currentAnalysisIndex - 1]);
+      setAnalysisData(analisisHistorial[currentAnalysisIndex - 1]);
     }
   };
 
   const handleNextClick = () => {
     if (currentAnalysisIndex < analisisHistorial.length - 1) {
       setCurrentAnalysisIndex(currentAnalysisIndex + 1);
-      setFormData(analisisHistorial[currentAnalysisIndex + 1]);
+      setAnalysisData(analisisHistorial[currentAnalysisIndex + 1]);
     }
+  };
+
+  const handleSaveClick = () => {
+    // Lógica para guardar los datos
+    console.log('Datos guardados:', { ...analysisData, ...additionalData });
+    // Aquí puedes agregar lógica para enviar los datos a un servidor o guardarlos localmente.
   };
 
   return (
     <Container sx={{ marginTop: "4%", marginRight: 3 }}>
+      <InfoMuestraSola />
+
       <div id="topAnalisis">
         <Typography id="transition-modal-title" variant="h6" component="h2">
           Análisis
@@ -68,8 +89,8 @@ export default function AnalysisForm() {
                 label="Análisis actual"
                 variant="standard"
                 id="analisisActual"
-                value={formData.analisisActual}
-                onChange={handleChange}
+                value={analysisData.analisisActual}
+                onChange={handleAnalysisChange}
               />
             </FormControl>
             <FormControl id="datos" sx={{ width: '25ch' }}>
@@ -78,8 +99,8 @@ export default function AnalysisForm() {
                 variant="standard"
                 type="number"
                 id="cantidadPrincipio"
-                value={formData.cantidadPrincipio}
-                onChange={handleChange}
+                value={analysisData.cantidadPrincipio}
+                onChange={handleAnalysisChange}
               />
             </FormControl>
             <FormControl id="datos" sx={{ width: '25ch' }}>
@@ -88,8 +109,8 @@ export default function AnalysisForm() {
                 variant="standard"
                 type="date"
                 id="fechaAsignacion"
-                value={formData.fechaAsignacion}
-                onChange={handleChange}
+                value={analysisData.fechaAsignacion}
+                onChange={handleAnalysisChange}
                 InputLabelProps={{ shrink: true }}
               />
             </FormControl>
@@ -99,8 +120,8 @@ export default function AnalysisForm() {
                 variant="standard"
                 type="date"
                 id="fechaFin"
-                value={formData.fechaFin}
-                onChange={handleChange}
+                value={analysisData.fechaFin}
+                onChange={handleAnalysisChange}
                 InputLabelProps={{ shrink: true }}
               />
             </FormControl>
@@ -111,8 +132,8 @@ export default function AnalysisForm() {
                 label="Rango"
                 variant="standard"
                 id="rango"
-                value={formData.rango}
-                onChange={handleChange}
+                value={analysisData.rango}
+                onChange={handleAnalysisChange}
               />
             </FormControl>
             <FormControl id="datos" sx={{ width: '25ch' }}>
@@ -120,8 +141,8 @@ export default function AnalysisForm() {
                 label="Resultado"
                 variant="standard"
                 id="resultado"
-                value={formData.resultado}
-                onChange={handleChange}
+                value={analysisData.resultado}
+                onChange={handleAnalysisChange}
               />
             </FormControl>
             <FormControl id="datos" sx={{ width: '25ch' }}>
@@ -129,8 +150,8 @@ export default function AnalysisForm() {
                 label="Especificación"
                 variant="standard"
                 id="especificacion"
-                value={formData.especificacion}
-                onChange={handleChange}
+                value={analysisData.especificacion}
+                onChange={handleAnalysisChange}
               />
             </FormControl>
           </div>
@@ -138,22 +159,83 @@ export default function AnalysisForm() {
       </Container>
 
       <Container maxWidth="md" sx={{ display: "flex", flexDirection: "row", justifyContent: "right", marginBottom: 8 }}>
-      {/* Paginación */}
-      <div className="pagination">
-        
-        <Button variant="contained" sx={{ margin: 2, backgroundColor: "#12C2E9" }} onClick={handlePrevClick} disabled={currentAnalysisIndex <= 0}>
-          &lt;
-        </Button>
-        <span>{analisisHistorial.length > 0 ? currentAnalysisIndex + 1 : 0} de {analisisHistorial.length} Análisis</span>
-        <Button variant="contained" sx={{ margin: 2, backgroundColor: "#12C2E9" }} onClick={handleNextClick} disabled={currentAnalysisIndex >= analisisHistorial.length - 1}>
-          &gt;
-        </Button>
-      </div>
+        {/* Paginación */}
+        <div className="pagination">
+          <Button variant="contained" sx={{ margin: 2, backgroundColor: "#12C2E9" }} onClick={handlePrevClick} disabled={currentAnalysisIndex <= 0}>
+            &lt;
+          </Button>
+          <span>{analisisHistorial.length > 0 ? currentAnalysisIndex + 1 : 0} de {analisisHistorial.length} Análisis</span>
+          <Button variant="contained" sx={{ margin: 2, backgroundColor: "#12C2E9" }} onClick={handleNextClick} disabled={currentAnalysisIndex >= analisisHistorial.length - 1}>
+            &gt;
+          </Button>
+        </div>
         <Button variant="contained" sx={{ margin: 2, backgroundColor: "#12C2E9" }} onClick={handleAddClick}>Añadir</Button>
-
       </Container>
 
+      <Typography variant="h6" component="h2" sx={{ marginBottom: 2, marginLeft: 15 }}>
+        Resultados
+      </Typography>
 
+      {/* Nuevo cuadro de formulario */}
+      <Container maxWidth="md" sx={{ border: 2, borderRadius: 3, padding: "5px 0", marginBottom: 5 }}>
+        <div id="additionalFields">
+          <Grid container spacing={2}> {/* Espaciado entre los elementos */}
+            <Grid item xs={12} sm={6}>
+              <FormControl id="datos" sx={{ width: '25ch' }}>
+                <TextField
+                  label="Descripción"
+                  variant="standard"
+                  id="descripcion"
+                  value={additionalData.descripcion}
+                  onChange={handleAdditionalChange}
+                />
+              </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <FormControl id="datos" sx={{ width: '25ch' }}>
+                <TextField
+                  label="Especificación"
+                  variant="standard"
+                  id="especificacionR"
+                  value={additionalData.especificacionR}
+                  onChange={handleAdditionalChange}
+                />
+              </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <FormControl id="datos" sx={{ width: '25ch' }}>
+                <TextField
+                  label="Resultado"
+                  variant="standard"
+                  id="resultadoR"
+                  value={additionalData.resultadoR}
+                  onChange={handleAdditionalChange}
+                />
+              </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <FormControl id="datos" sx={{ width: '25ch' }}>
+                <TextField
+                  label="Observaciones"
+                  variant="standard"
+                  id="observaciones"
+                  value={additionalData.observaciones}
+                  onChange={handleAdditionalChange}
+                  multiline
+                  rows={4}
+                />
+              </FormControl>
+            </Grid>
+          </Grid>
+        </div>
+      </Container>
+
+      {/* Botón de guardar al final */}
+      <Container sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 1, marginBottom: 2, marginRight: 2 }}>
+        <Button variant="contained" sx={{ backgroundColor: "#12C2E9" }} onClick={handleSaveClick}>
+          Guardar
+        </Button>
+      </Container>
     </Container>
   );
 }
