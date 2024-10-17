@@ -34,25 +34,19 @@ export default function Menu(){
   <ListItemText>Registrar muestra</ListItemText>
   <ModalComponent />
 </MenuItem>
-        <MenuItem id="itemsMenu">
-          <ListItemIcon sx={{marginRight: 2}}>
-            <BorderColorRoundedIcon fontSize="large" sx={{color: "white"}} />
-          </ListItemIcon>
-          <ListItemText>Mantenimiento</ListItemText>
-        </MenuItem>
         <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_analista.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <ArticleRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
           <ListItemText>Historial de muestras</ListItemText>
         </MenuItem>
-        <MenuItem id="itemsMenu">
+        <MenuItem id="itemsMenu" component="a" href="/public/muestras_para_auditar.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <MessageRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
           <ListItemText>Muestras en fila</ListItemText>
         </MenuItem>
-        <MenuItem id="itemsMenu">
+        <MenuItem id="itemsMenu" component="a" href="/public/lista_muestra_analista.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <MessageRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
@@ -64,7 +58,7 @@ export default function Menu(){
           </ListItemIcon>
           <ListItemText>Bitacora general</ListItemText>
         </MenuItem>
-        <MenuItem id="itemsMenu">
+        <MenuItem id="itemsMenu" component="a" href="/public/historial_muestras_analista.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <AppsRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
