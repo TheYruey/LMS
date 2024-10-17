@@ -18,11 +18,12 @@ createRoot(document.getElementById('historial_muestras_auditadas')).render(
         <Typography Typography id="transition-modal-title" variant="h5">
             Historial muestras auditadas
         </Typography>
-        <div style={{width: "20%", marginTop: "5%", marginLeft: "70%", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+        <div style={{width: "35%", marginTop: "5%", marginLeft: "60%", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+            <ModalEnmiendas/>
             <Button variant='contained' sx={{backgroundColor: "#12C2E9"}}>Refrescar</Button>
             <Button variant='contained' sx={{backgroundColor: "#12C2E9"}}>Consultar</Button>
         </div>
-        <ModalEnmiendas/>
+        
         <TableComponent />
       </div>
     </div>

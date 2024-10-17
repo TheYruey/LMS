@@ -2,6 +2,35 @@
 
 const API_BASE_URL = "https://localhost:7299/api";
 
+//save en analysis form
+export const guardarAnalisis = async (analisisData) => {
+    const response = await fetch(`${API_BASE_URL}/TAnalisis`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(analisisData)
+    });
+    if (!response.ok) {
+        throw new Error("Error al guardar el análisis");
+    }
+    return response.json();
+};
+
+//obtener enmiendas
+export const obtenerEnmiendas = async () => {
+    const response = await fetch(`${API_BASE_URL}/TEnmiendas`);
+    if (!response.ok) throw new Error("Error al obtener las enmiendas");
+    return response.json();
+};
+
+// obtener muestra por id
+export const obtenerMuestraPorId = async (id) => {
+    const response = await fetch(`${API_BASE_URL}/TMuestras/${id}`);
+    if (!response.ok) throw new Error("Error al obtener la muestra");
+    return response.json();
+};
+
 // Función general de fetch
 const fetchData = async (endpoint) => {
     const respuesta = await fetch(`${API_BASE_URL}/${endpoint}`);

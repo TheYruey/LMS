@@ -6,7 +6,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '/src/index.css'
 import '/src/menu.css'
-import MenuSupervisor from '../src/menu_supervisor';
+import MenuSupervisor from '/src/menu_supervisor';
 
 createRoot(document.getElementById('inicioSupervisor')).render(
   <StrictMode>
