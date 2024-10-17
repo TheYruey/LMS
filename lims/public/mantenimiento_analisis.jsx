@@ -6,7 +6,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '/src/menu.css';
-import TableComponent from '../src/TableComponent';
+import AnalisisTable from '../src/AnalisisTable';
 import { Button, TextField, Typography, Box, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -58,8 +58,8 @@ createRoot(document.getElementById('mantenimiento_analisis')).render(
           <Button variant="contained" color="primary" style={{ backgroundColor: '#00aaff', height: '40px', marginRight: '16px'  }}> Añadir analisis </Button>
         </Box>
 
-        {/* Table Component */}
-        <TableComponent />
+ {/* Analisis Table Component */}
+      <AnalisisTable />
       </div>
     </div>
   </StrictMode>
