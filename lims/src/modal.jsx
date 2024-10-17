@@ -26,8 +26,10 @@ export default function ModalComponent(){
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+    <div> 
+      
+      <Button onClick={handleOpen} className="custom-height-button">         </Button>
+
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

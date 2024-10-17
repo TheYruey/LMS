@@ -9,9 +9,10 @@ import BorderColorRoundedIcon from '@mui/icons-material/BorderColorRounded';
 import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 import MessageRoundedIcon from '@mui/icons-material/MessageRounded';
-import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import { Container } from '@mui/material';
+import ModalComponent from './modal';
+
 
 export default function Menu(){
   return(
@@ -26,12 +27,13 @@ export default function Menu(){
           </ListItemIcon>
           <ListItemText>Inicio</ListItemText>
         </MenuItem>
-        <MenuItem id="itemsMenu">
-          <ListItemIcon sx={{marginRight: 2}}>
-            <BorderColorRoundedIcon fontSize="large" sx={{color: "white"}} />
-          </ListItemIcon>
-          <ListItemText>Registrar muestra</ListItemText>
-        </MenuItem>
+        <MenuItem id="itemsMenu" sx={{ display: 'flex', alignItems: 'center' }}>
+  <ListItemIcon sx={{ marginRight: 2 }}>
+    <BorderColorRoundedIcon fontSize="large" sx={{ color: "white" }} />
+  </ListItemIcon>
+  <ListItemText>Registrar muestra</ListItemText>
+  <ModalComponent />
+</MenuItem>
         <MenuItem id="itemsMenu">
           <ListItemIcon sx={{marginRight: 2}}>
             <BorderColorRoundedIcon fontSize="large" sx={{color: "white"}} />
@@ -55,12 +57,6 @@ export default function Menu(){
             <MessageRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
           <ListItemText>Muestras disponibles</ListItemText>
-        </MenuItem>
-        <MenuItem id="itemsMenu">
-          <ListItemIcon sx={{marginRight: 2}}>
-            <PeopleAltRoundedIcon fontSize="large" sx={{color: "white"}} />
-          </ListItemIcon>
-          <ListItemText>Administrar usuarios</ListItemText>
         </MenuItem>
         <MenuItem id="itemsMenu">
           <ListItemIcon sx={{marginRight: 2}}>
