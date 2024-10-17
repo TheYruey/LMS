@@ -8,18 +8,16 @@ import '@fontsource/roboto/700.css';
 import '/src/menu.css'
 import TableComponent from '../src/TableComponent';
 import { Typography } from '@mui/material';
-import ModalEnmiendas from '../src/modalenmiendas';
 
 
-createRoot(document.getElementById('historial_muestras_analista')).render(
+createRoot(document.getElementById('muestras_analizar')).render(
   <StrictMode>
   <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
-  <MenuAnalista />
+    <MenuAnalista />
     <div style={{width: "100%", marginLeft: "20%", marginTop: "4%"}}>
       <Typography Typography id="transition-modal-title" variant="h5">
           Historial de muestras realizadas
       </Typography>
-      <ModalEnmiendas/>
       <TableComponent />
     </div>
   </div>

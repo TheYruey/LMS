@@ -25,7 +25,7 @@ export default function MenuAnalista(){
           <ListItemText>Inicio</ListItemText>
         </MenuItem>
 
-        <MenuItem id="itemsMenu" component="a" href="/public/bitacora_muestras_supervisor.html">
+        <MenuItem id="itemsMenu" component="a" href="/public/muestras_analizar.html">
           <ListItemIcon sx={{marginRight: 2}}>
             <MessageRoundedIcon fontSize="large" sx={{color: "white"}} />
           </ListItemIcon>
