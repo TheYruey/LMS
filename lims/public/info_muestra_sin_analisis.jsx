@@ -7,7 +7,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '/src/index.css'
 import '/src/menu.css'
-import MenuAnalista from '../src/menu_analista';
+import Menu from '../src/menu';
 
 
 
@@ -15,7 +15,7 @@ import MenuAnalista from '../src/menu_analista';
 createRoot(document.getElementById('info_muestra_sin_analisis')).render(
   <StrictMode>
     <div style={{display: "flex", flexDirection: "column", justifyContent: "flex-start"}}>
-      <MenuAnalista />
+      <Menu />
       <InfoMuestraSola />
     </div>
   </StrictMode>,

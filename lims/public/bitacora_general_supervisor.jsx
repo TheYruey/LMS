@@ -5,7 +5,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '/src/menu.css'
-import TableComponent from '../src/TableComponent';
+import TableComponentS from '../src/TableComponentS';
 import ModalEnmiendas from '../src/modalenmiendas';
 import { Typography } from '@mui/material';
 import MenuSupervisor from '../src/menu_supervisor';
@@ -21,7 +21,7 @@ createRoot(document.getElementById('bitacoraGeneralSupervisor')).render(
       <div style={{marginLeft: "80%"}}>
         <ModalEnmiendas />
       </div>
-      <TableComponent />
+      <TableComponentS />
     </div>
   </div>
 </StrictMode>

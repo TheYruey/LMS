@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import ModalEnmendar from '/src//modalEnmendar';
 import ModalAuditar from '/src//modalAuditar';
-import TableComponent from '/src//TableComponent';
+import TableComponentAud from '/src//TableComponentAud';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -24,7 +24,7 @@ createRoot(document.getElementById('muestras_para_auditar')).render(
             <ModalAuditar />
            
         </div>
-        <TableComponent />
+        <TableComponentAud />
       </div>
     </div>
   </StrictMode>,

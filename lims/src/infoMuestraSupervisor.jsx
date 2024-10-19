@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Button, Container, FormControl, TextField } from '@mui/material';
 import { obtenerMuestraPorId, enmendarMuestra, auditarMuestra } from './services/apiService';  
-import './infoMuestra.css';
+import './infoMuestraSupervisor.css';
 
 export default function InfoMuestra() {
     const [muestraData, setMuestraData] = useState({
@@ -72,7 +72,7 @@ export default function InfoMuestra() {
     return (
         <Container sx={{ marginTop: "4%", marginRight: 4 }}>
         <div id="top">
-            <Button variant="contained" sx={{ height: 50, borderRadius: 15, marginRight: 2, backgroundColor: "#12C2E9" }}component="a" href="/public/muestras_para_auditar.html">
+            <Button variant="contained" sx={{ height: 50, borderRadius: 15, marginRight: 2, backgroundColor: "#12C2E9" }}component="a" href="/public/bitacora_general_supervisor.html">
                 <ArrowBackIcon />
             </Button>
             <Typography id="transition-modal-title" variant="h6" component="h2">
@@ -222,14 +222,15 @@ export default function InfoMuestra() {
                 </div>
             </Container>
         </Container>
+ 
 
             {/* Botones para Enmendar y Auditar */}
             <Container maxWidth="md" sx={{ display: "flex", flexDirection: "row", justifyContent: "right", marginBottom: 8 }}>
                 <Button variant="contained" sx={{ margin: 2, backgroundColor: "#12C2E9" }} onClick={handleEnmendarClick}>
-                    Enmendar
+                    Reporte
                 </Button>
                 <Button variant="contained" sx={{ margin: 2, marginRight: 0, backgroundColor: "#12C2E9" }} onClick={handleAuditarClick}>
-                    Auditar
+                    Enmiendas
                 </Button>
             </Container>
         </Container>
