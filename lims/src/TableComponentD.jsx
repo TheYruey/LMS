@@ -4,7 +4,7 @@ import { TextField, Button, MenuItem, Select, InputAdornment } from '@mui/materi
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
 import EditIcon from '@mui/icons-material/Edit';
-import ModalComponent from './modal'; 
+import ModalComponent from './ModalComponent'; 
 
 // Función para generar 50 filas de datos ficticios
 const generateRows = () => {
@@ -156,7 +156,7 @@ const TableComponentD = () => {
 
       {/* Modal */}
       {openModal && (
-        <ModalComponent open={openModal} onClose={handleCloseModal} data={selectedRow} />
+      <ModalComponent open={openModal} onClose={handleCloseModal} data={selectedRow} />
       )}
     </div>
   );

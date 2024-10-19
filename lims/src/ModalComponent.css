@@ -1,0 +1,18 @@
+#principalContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+#sContainer{
+    margin: 40px;
+}
+
+#datos{
+    margin-top: 15px;
+}
+
+.custom-height-button {
+    height: 40px; /* Ajusta este valor según la altura que prefieras */
+    width: 200px;
+  }
+  
