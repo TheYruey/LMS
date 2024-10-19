@@ -226,12 +226,10 @@ export default function InfoMuestra() {
 
             {/* Botones para Enmendar y Auditar */}
             <Container maxWidth="md" sx={{ display: "flex", flexDirection: "row", justifyContent: "right", marginBottom: 8 }}>
-                <Button variant="contained" sx={{ margin: 2, backgroundColor: "#12C2E9" }} onClick={handleEnmendarClick}>
+                <Button variant="contained" sx={{ margin: 2, backgroundColor: "#12C2E9" }} onClick={handleEnmendarClick}component="a" href="/public/Reporte.html">
                     Reporte
                 </Button>
-                <Button variant="contained" sx={{ margin: 2, marginRight: 0, backgroundColor: "#12C2E9" }} onClick={handleAuditarClick}>
-                    Enmiendas
-                </Button>
+
             </Container>
         </Container>
     );
